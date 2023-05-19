@@ -1,0 +1,132 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem; 
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5rem;
+    // background: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    z-index: 100;
+    transition: 0.3s ease;
+    background: rgba(255, 255, 255, 0.5);
+
+
+    &.sticky {
+        background: #ECECEe; //แถบสีบนheader
+    }
+
+    // for menu-btn 
+    .menu-btn {
+        display: none;
+
+        @media (max-width: 850px) {
+            display: block;
+            font-size: 2rem;
+            a {
+                color: black;
+            }
+        }
+    }
+
+    .nav-mobile {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        transition: all 0.2s linear;
+        border-top: .1rem solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+        &.active {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        a {
+            // margin: 1.5rem;
+            padding: 2rem;
+            background: #fff;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: block;
+            color: black;
+            text-decoration: none;
+        } 
+
+        .icons-link {
+            display: flex;
+        }
+    }
+
+    .nav-left {
+        display: flex;
+        align-items: center;
+
+        .logo {
+            font-size: 3em;
+            font-weight: 700;
+            text-decoration: none;
+            color: black;
+            margin-right: 2rem;
+            width: 12rem;
+
+            @media (max-width: 850px) {
+                margin: 0;
+            }
+        }
+    }
+    
+    
+    .nav-link {
+        @media (max-width: 850px) {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.2em;
+            transition: .3s ease;
+            padding: .5rem;
+            border-radius: 2rem;
+
+            &:hover {
+                color: black;
+                background: #7B7B7B;
+                
+                
+            }
+        }
+
+        a:not(:last-child) {
+            margin-right: 2rem;
+        }
+
+    }
+
+    .icons-link {
+       
+
+        @media (max-width: 321px) {
+            display: none;
+        }
+
+        a {
+            color: black;
+            font-size: 1.6em;
+        }
+
+        a:not(:last-child) {
+            margin-right: 20px;
+
+            @media (max-width: 376px) {
+                margin-right: 1px;
+            }
+        }
+    }
+}
